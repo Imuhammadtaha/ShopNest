@@ -10,10 +10,15 @@ import contactRoutes from "./routes/contactRoutes.js";
 import cors from "cors";
 import formidableMiddleware from "express-formidable";
 import path from "path";
+import { fileURLToPath } from "url";
 
 //dot env config
 dotenv.config();
 
+//es6 module fix
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //database Connection
 connectDB();
 //rest objrct
